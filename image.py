@@ -16,6 +16,8 @@ def process(directoryName):
             img_new = rgb2gray(img)
             plt.imshow(img_new)
             plt.title('Grayscale Format') 
+output_dir = os.path.join(os.getcwd(), "output")
+os.makedirs(output_dir, exist_ok=True)
             plt.imsave(os.getcwd() + "/output/" + filenamestr +"-" + helper.generateRandomName() + "_modified.jpeg", (img_new*255).astype(np.uint8))
         else:
             continue
